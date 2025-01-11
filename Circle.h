@@ -4,10 +4,16 @@
 class Circle : public Shape
 {
 private:
-	double center_coord;
 	int radius;
 public:
-	Circle(double coord_S, int radius_S) noexcept : center_coord{ coord_S }, radius{ radius_S } {}
+	Circle() = default;
+	// онструктор с параметрами дл€ инициализиции фигур при создании
+	Circle(pair<int, int> cord_S, int radius_S) noexcept : Shape(cord_S), radius{radius_S} {}
 
-	void Show() const noexcept;
+	//ћодификаторы и аксессоры
+	int get_rad() const noexcept { return radius; }
+	void set_rad(int rad_S) noexcept { radius = rad_S; }
+
+	//ѕереопределенный метод дл€ вывода данных о фигуре
+	void Show() const noexcept override;
 };

@@ -4,10 +4,16 @@
 class Square : public Shape
 {
 private:
-	double upper_left_coord;
 	int side_length;
 public:
-	Square(double coord_S, int length_S) noexcept : upper_left_coord{ coord_S }, side_length{ length_S } {}
+	Square() = default;
+	// онструктор с параметрами дл€ инициализиции фигур при создании
+	Square(int length_S, pair<int, int> cord_S) noexcept : Shape(cord_S), side_length{ length_S } {}
 
-	void Show() const noexcept;
+	//ћодификаторы и аксессоры
+	int get_length() const noexcept { return side_length; }
+	void set_length(int len_S) noexcept { side_length = len_S; }
+
+	//ѕереопределенный метод дл€ вывода данных о фигуре
+	void Show() const noexcept override;
 };

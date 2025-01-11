@@ -2,5 +2,5 @@
 
 void Circle::Show() const noexcept
 {
-	cout << "Окружность\nКоордината центра: " << center_coord << "\nРадиус: " << radius;
+	cout << "Окружность\nКоордината центра: " << coord.first << "." << coord.second << "\nРадиус: " << radius;
 }
